@@ -19,7 +19,7 @@ require "php/fonction.php";
 
 </main>
 <footer>
-    
+
 </footer>
 </body>
 </html>

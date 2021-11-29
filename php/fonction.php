@@ -1,5 +1,11 @@
 <?php
 /*connexion a la base*/
+function sessionDestroy(){
+    if (isset($_POST['deco'])) {
+        header("location:../index.php");
+        session_destroy();
+    }
+}
 function connectiondd()
 {
     $connect = mysqli_connect("localhost", "root", "", "reservationsalles");
@@ -30,4 +36,11 @@ function isLoginInDatabase()
         }
     }
     return false;
+}
+/*sessions destroy*/
+function sessionDestroy(){
+    if (isset($_POST['deco'])) {
+        header("location:../index.php");
+        session_destroy();
+    }
 }
