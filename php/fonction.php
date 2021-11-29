@@ -6,17 +6,17 @@ function sessionDestroy(){
         session_destroy();
     }
 }
-function connectiondd()
+function connectionbdd()
 {
     $connect = mysqli_connect("localhost", "root", "", "reservationsalles");
     return $connect;
 }
 
-connectiondd();
+connectionbdd();
 /*selection de tout les utilisateur de la base*/
 function requestall()
 {
-    $req = mysqli_query(connectiondd(), "SELECT* FROM utilisateurs");
+    $req = mysqli_query(connectionbdd(), "SELECT* FROM utilisateurs");
     return $req;
 }
 /*resultat de la requete d avant*/
@@ -36,4 +36,9 @@ function isLoginInDatabase()
         }
     }
     return false;
+}
+function timestampToDateSQL($timestamp){
+    $date = new DateTime();
+    $date->setTimestamp($timestamp);
+    return $date->format('Y-m-d H:i:s');
 }
