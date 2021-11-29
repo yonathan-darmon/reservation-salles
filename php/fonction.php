@@ -37,10 +37,3 @@ function isLoginInDatabase()
     }
     return false;
 }
-/*sessions destroy*/
-function sessionDestroy(){
-    if (isset($_POST['deco'])) {
-        header("location:../index.php");
-        session_destroy();
-    }
-}
