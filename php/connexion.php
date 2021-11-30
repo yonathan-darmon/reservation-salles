@@ -1,20 +1,23 @@
 <?php
 session_start();
 require "fonction.php";
-if (isset($_POST['submit'])){
-    if(!isset($_POST['login'])|| !isset($_POST['password'])){
+if (isset($_POST['submit'])) {
+    if (!isset($_POST['login']) || !isset($_POST['password'])) {
         echo "Veuillez remplir tout les champs";
-    }
-    else{
-        foreach (result() as $key =>$value){
-            if($_POST['login']==$value['login'] && $_POST['password']==$value["password"]){
-                $_SESSION['login']=$_POST['login'];
-                $_SESSION['password']=$_POST['password'];
+    } else {
+        foreach (result() as $key => $value) {
+            if ($_POST['login'] == $value['login'] && $_POST['password'] == $value["password"]) {
+                $_SESSION['login'] = $_POST['login'];
+                $_SESSION['password'] = $_POST['password'];
                 echo "Vous etes bien connecté";
-                header('Refresh:3 ; URL=planning.php');            }
+                header('Refresh:3 ; URL=planning.php');
+            } else {
+                echo "verifier votre login/mot de passe";
+            }
         }
     }
 }
+
 
 ?>
 <!doctype html>
@@ -28,7 +31,7 @@ if (isset($_POST['submit'])){
 </head>
 <body>
 <header>
-
+<?php require "header.php"?>
 </header>
 <main>
     <form action="#" method="post">

@@ -50,6 +50,7 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
 <header>
+    <?php require "header.php"?>
 
 </header>
 <main>
