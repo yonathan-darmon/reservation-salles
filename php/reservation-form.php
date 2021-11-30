@@ -13,11 +13,11 @@ if (isset($_POST['submit'])) {
         $date2 = timestampToDateSQL($timestamp2);
         $diffdate = $timestamp2 - $timestamp1;
         if ($diffdate != 3600) {
-            echo "la  durée de reservation ne peut etre que d'une heure";
+            $error2= "la  durée de reservation ne peut etre que d'une heure";
 
         }
         elseif (!isset($_SESSION['login'])){
-            echo "il faut s'inscrire pour ajouter un evenement!";
+            $error1= "il faut se connecter pour ajouter un evenement!";
             header('Refresh:3 ; URL=connexion.php');
         }
         else {
@@ -88,6 +88,14 @@ if (isset($_POST['submit'])) {
         </select>
 
         <input type="submit" name="submit" value="Reserver">
+        <?php
+        if (isset($error1)){
+            echo $error1;
+        }
+        if (isset($error2)){
+            echo $error2;
+        }
+        ?>
     </form>
 
 </main>
