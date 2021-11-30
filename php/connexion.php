@@ -3,16 +3,16 @@ session_start();
 require "fonction.php";
 if (isset($_POST['submit'])) {
     if (!isset($_POST['login']) || !isset($_POST['password'])) {
-        $error1= "Veuillez remplir tout les champs";
+        $error1 = "Veuillez remplir tout les champs";
     } else {
         foreach (result() as $key => $value) {
             if ($_POST['login'] == $value['login'] && $_POST['password'] == $value["password"]) {
                 $_SESSION['login'] = $_POST['login'];
                 $_SESSION['password'] = $_POST['password'];
-                $connect= "Vous etes bien connecté";
+                $connect = "Vous etes bien connecté";
                 header('Refresh:3 ; URL=planning.php');
             } else {
-                $error2= "verifier votre login/mot de passe";
+                $error2 = "verifier votre login/mot de passe";
             }
         }
     }
@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
 <header>
-<?php require "header.php"?>
+    <?php require "header.php" ?>
 </header>
 <main>
     <form action="#" method="post">
@@ -46,13 +46,13 @@ if (isset($_POST['submit'])) {
         <input type="text" name="password" placeholder="Votre mot de passe">
         <input type="submit" name="submit" value="connexion">
         <?php
-        if(isset($error1)){
+        if (isset($error1)) {
             echo $error1;
         }
-        if (isset($error2)){
+        if (isset($error2)) {
             echo $error2;
         }
-        if (isset($connect)){
+        if (isset($connect)) {
             echo $connect;
         }
         ?>
@@ -60,7 +60,7 @@ if (isset($_POST['submit'])) {
     </form>
 </main>
 <footer>
-    <?php require "footer.php"?>
+    <?php require "footer.php" ?>
 
 </footer>
 

@@ -29,14 +29,17 @@ nav ul li {
 
 li a {
     text-decoration: none;
-    color: #ffd6d6 ;
+    color: #ffd6d6;
 }
-li a:hover{
+
+li a:hover {
     color: #E50074;
 }
-nav ul li ul{
+
+nav ul li ul {
     display: block;
 }
-.deco{
+
+.deco {
     color: black;
 }

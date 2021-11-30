@@ -6,6 +6,7 @@
         <?php
         if (!isset($_SESSION['login'])) {
             echo "<li><a href='../index.php'>Accueil</a></li>";
+            echo "<li><a href='inscription.php'>Inscription</a>";
             echo "<li><a href='connexion.php'>Connexion</a></li>";
         }
         ?>

@@ -14,6 +14,7 @@ function requestall()
     $req = mysqli_query(connectionbdd(), "SELECT* FROM utilisateurs");
     return $req;
 }
+
 /*resultat de la requete d avant*/
 function result()
 {
@@ -32,7 +33,9 @@ function isLoginInDatabase()
     }
     return false;
 }
-function timestampToDateSQL($timestamp){
+
+function timestampToDateSQL($timestamp)
+{
     $date = new DateTime();
     $date->setTimestamp($timestamp);
     return $date->format('Y-m-d H:i:s');
