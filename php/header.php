@@ -1,4 +1,6 @@
 <nav>
+
+    <img src="../asset/image/logo_chanot-removebg-preview.png" alt="logo chanot">
     <ul>
 
         <?php
@@ -13,7 +15,7 @@
         if (isset($_SESSION['login'])) {
             echo "  <li><a href='profil.php'>Mes informations</a></li>";
 
-            $deco = "<form action='#' method='post' id='deco'><input type='submit' name='deco' value='deconnexion'></form>";
+            $deco = "<form action='#' method='post' id='deco'><input type='submit' name='deco' class='deco' value='Deconnexion'></form>";
 
 
         } else {

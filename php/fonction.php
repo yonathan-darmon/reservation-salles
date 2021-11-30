@@ -1,11 +1,6 @@
 <?php
 /*connexion a la base*/
-function sessionDestroy(){
-    if (isset($_POST['deco'])) {
-        header("location:../index.php");
-        session_destroy();
-    }
-}
+
 function connectionbdd()
 {
     $connect = mysqli_connect("localhost", "root", "", "reservationsalles");
