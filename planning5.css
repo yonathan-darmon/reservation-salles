@@ -1,0 +1,16 @@
+table{
+    width: 100%;
+    height: calc(100vh);
+}
+tbody th{
+    border: 1px solid blue;
+}
+tbody td{
+    border: 1px solid blue;
+    padding: 10px;
+    vertical-align: top;
+    width: 14.29%;
+}
+tbody td:hover{
+    transform:scale(1.02);
+}
