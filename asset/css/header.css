@@ -24,12 +24,12 @@ nav ul {
 nav ul li {
     text-decoration: none;
     list-style: none;
-    color: #ffd6d6;
+    color: ghostwhite;
 }
 
 li a {
     text-decoration: none;
-    color: #ffd6d6;
+    color: ghostwhite;
 }
 
 li a:hover {
