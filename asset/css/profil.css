@@ -29,6 +29,7 @@ form{
 input{
     margin-left: 80px;
     margin-top: 10px;
+    border-radius: 1em;
 }
 #conteneur{
     background: rgb(35,33,33);

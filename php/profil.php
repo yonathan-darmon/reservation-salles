@@ -1,19 +1,24 @@
 <?php
-    /*if(isset($_POST['submit'])) {
+    /*session_start();
+    require "fonction.php";
+    if(isset($_POST['submit'])) {
         $login = $_POST['login'];
         $actuallogin = $_SESSION['login'];
         $password = $_POST['password'];
 
-        if(empty($password)){
-			//requête pour modifier les informations de l'utilisateur
-        $req = $db->query("UPDATE `utilisateurs`  SET `login`= '$login',`prenom`= '$prenom',`nom`= '$nom' WHERE `login`= '$actuallogin' ");
-		}
-		else{
-			//requête pour modifier les informations de l'utilisateur
-        $req = $db->query("UPDATE `utilisateurs`  SET `login`= '$login',`prenom`= '$prenom',`nom`= '$nom',`password`= '$hash' WHERE `login`= '$actuallogin' ");
-		}
+        //récuperer et pré-remplir le formulaire
+        if($_SESSION != null){
+            $session = $_SESSION['login'];
+            $req2 = mysqli_query(connecctionbdd(), "SELECT * FROM `utilisateurs` WHERE `login` = '$session'");
+            $res = $req2->fetch_array();
+        }
+
+        //requête pour modifer les données de l'utilisateur
+        $req = mysqli_query(connecyionbdd(), "UPDATE `utilisateurs`  SET `login`= '$login', `password`= '$password' WHERE `login`= '$actuallogin' ");
+
         //afficher la nouvelle session
         $_SESSION['login'] = $login;
+        header("Location: profil.php");
     }*/
 ?>
 
@@ -35,12 +40,13 @@
         <img src="https://www.kindpng.com/picc/m/269-2697881_computer-icons-user-clip-art-transparent-png-icon.png">
         <p class="text"> profil de </p>
     </div>
-    <?php /*if(isset($login)) {
+    <?php /*if(isset($res)) {
         echo '<img src="https://www.kindpng.com/picc/m/269-2697881_computer-icons-user-clip-art-transparent-png-icon.png">' echo $_SESSION['login'];
     }*/
     ?>
     <form action="#" method="post">
     <div class="boite">
+        
         <p>Login</p>
         <input type="text" name="login">
         <p>password</p>

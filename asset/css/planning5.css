@@ -14,3 +14,14 @@ tbody td{
 tbody td:hover{
     transform:scale(1.02);
 }
+.moins{
+    margin-right: 130px;
+}
+.plus{
+    margin-left: 130px;
+}
+.text{
+    position: absolute;
+    left: 48.2%;
+    top: -1%;
+}
