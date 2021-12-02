@@ -1,0 +1,33 @@
+body {
+    background-image: url(https://imgr.search.brave.com/i96txdhp8LWnVywkugJkLDFwut0IkycQsKdeRl-fB78/fit/1152/768/ce/1/aHR0cHM6Ly93d3cu/bWFyc2VpbGxlLWNo/YW5vdC5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMTMvMDYv/R291ZGVzLXJlcGFz/LTIuanBn);
+    background-size: 100%;
+}
+
+main #form  form {
+    background-color: blanchedalmond;
+    border: 5px solid black;
+    border-radius: 15px;
+    margin-top: 10%;
+    margin-bottom: 15%;
+    padding: 25px;
+    width: 20%;
+}
+
+main #form form label {
+    font-size: 20px;
+}
+
+main #form .inp input {
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: thistle;
+    color: white;
+    width: auto;
+    height: auto;
+    padding: 10px;
+}
+
+main #form .inp input:hover {
+background-color: thistle;
+font-size: 20px;
+}
