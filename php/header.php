@@ -1,4 +1,4 @@
-<nav>
+<nav class="header">
 
     <img src="../asset/image/logo_chanot-removebg-preview.png" alt="logo chanot">
     <ul>
