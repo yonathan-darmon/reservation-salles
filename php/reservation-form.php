@@ -62,7 +62,6 @@ if (isset($_POST['submit'])) {
 
 </header>
 <main>
-    <img class="img1" src="../asset/image/marseille-chanot-7.jpg" alt="salle des expo">
     <form action="#" method="post">
         <label for="titre">Nom de l'evenement</label>
         <input type="text" name="titre" placeholder="ajouter un titre à l'evenement">

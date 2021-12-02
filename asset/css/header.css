@@ -25,12 +25,14 @@ nav ul {
 nav ul li {
     text-decoration: none;
     list-style: none;
-    color: ghostwhite;
+    color: #008CD3;
+    font-size: x-large;
+    font-weight: bold;
 }
 
 li a {
     text-decoration: none;
-    color: ghostwhite;
+    color: #008CD3;
 }
 
 li a:hover {
