@@ -1,0 +1,216 @@
+*{box-sizing: border-box }
+
+img{
+
+max-width:100%
+
+}
+
+
+.slideshow{
+
+border: 5px solid white;
+box-shadow: 0 0 5px hsla(0,0%,0%,.5);
+overflow: hidden;
+max-width: 600px;
+margin: 2rem auto;
+position: relative;
+
+}
+
+.text {
+    text-align: center;
+    font-size: 25px;
+    font-style: italic;
+}
+
+
+    
+.slideshow ul{
+
+padding-bottom: 66.67%;
+margin: 0;
+list-style-type: none;
+position: relative
+	
+	}
+    
+    
+.slideshow li{
+
+top: 0;
+left: 0;
+animation: slideshow 25s ease infinite;
+position: absolute;
+opacity: 0;
+
+
+}
+
+    
+
+.slideshow li:nth-child(2){
+
+animation-delay: 5s
+
+}
+
+.slideshow li:nth-child(3){
+
+animation-delay: 10s
+
+}
+
+.slideshow li:nth-child(4){
+
+animation-delay: 15s
+
+}
+
+.slideshow li:nth-child(5){
+
+animation-delay: 20s
+
+}
+
+    
+@keyframes slideshow{
+	
+0%{opacity: 0}
+
+10%{opacity: 1}
+
+20%{opacity: 1}
+
+25%{opacity: 0}
+
+100%{opacity: 0}
+	
+	} 
+
+    
+.slideshow span{
+
+background: rgba(0,0,0,0.7);
+height: 40px;
+align-items: center;
+justify-content: center;
+display: flex;
+color: white;
+position: absolute;
+bottom: 0;
+right: 0;
+left: 0
+
+}
+    
+
+.barre_progression{ 
+	
+position: absolute;
+left: 0;
+bottom: 40px;
+height: 5px;
+background: white;
+animation: barre_progression 25s ease-out infinite;
+	
+}
+    
+   
+@keyframes barre_progression{
+	
+0%,20%,40%,60%,80%,100%{width: 0%;opacity: 0}
+	
+4%,24%,44%,64%,84%{width: 0%;opacity: .3}
+	
+16%,36%,56%,76%,96%{width: 100%;opacity: .7}
+	
+17%,37%,57%,77%,97%{width: 100%;opacity: .3}
+	
+18%,38%,58%,78%,98%{width: 100%;opacity: 0}
+	
+	}
+
+
+#high {
+    background-color: rgb(69, 132, 168);
+    justify-content: space-between;
+}    
+
+h1{
+    text-align: center;
+}
+
+#goude {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tab1 {
+margin-top: 50px;
+}
+
+.tab2 {
+margin-top: 50px;
+}
+
+.tab1 table th {
+    background-color: rgb(125, 125, 136);
+    padding: 10px;
+}
+
+.tab1 table td {
+    background-color: rgb(217, 220, 226);
+    width: 150px;
+    text-align: center;
+}
+
+.tab2 table th {
+    background-color: rgb(125, 125, 136);
+    width: 15px;
+    padding: 20px;
+}
+
+.tab2 table td {
+    background-color: rgb(217, 220, 226);
+    text-align: center;
+}
+
+#btn {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-left: 35%;
+}
+
+
+.btn2 button {
+    width: 100px;
+    padding: 5px;
+    background-color: rgb(69, 132, 168);
+    border: none;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-left: 15%;
+}
+
+.btn3 button {
+    width: 100px;
+    padding: 5px;
+    background-color: rgb(69, 132, 168);
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-left: 15%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+button:hover {
+    background-color: black;
+}
