@@ -6,8 +6,6 @@
 
 html {
 
-    width: 100%;
-    height: auto;
     background-size: cover;
     color: #405565;
     opacity: 0.8;
@@ -15,6 +13,7 @@ html {
 
 .img {
     margin-left: 15%;
+    margin-top: 3%;
 }
 
 .img1 {
@@ -64,13 +63,49 @@ select {
 
 .container {
     display: flex;
-    max-width: 98%;
+    width: 100%;
 }
-body{
-    width: 100vw;
-    height: 100vh;
-}
+
 main{
     width: 100%;
     height:80%;
+}
+@media (max-width: 1024px) {
+    form{
+        margin: 2%;
+    }
+    .img{
+        margin: 2%;
+    }
+    .img1{
+        width: 90%;
+    }
+}
+@media (max-width: 768px) {
+    select{
+        width: 40%;
+    }
+    .reserver {
+        width: 40%;
+    }
+    form{
+        margin: 1%;
+    }
+
+}
+@media (max-width: 426px) {
+
+
+    .container{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .img1{
+        margin-left: 4%;
+    }
+    form{
+        width: 70%;
+        height: auto;
+    }
+
 }
