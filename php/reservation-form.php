@@ -62,54 +62,59 @@ if (isset($_POST['submit'])) {
 
 </header>
 <main>
-    <form action="#" method="post">
-        <label for="titre">Nom de l'evenement</label>
-        <input type="text" name="titre" placeholder="ajouter un titre à l'evenement">
-        <label for="description">Description de l'evenement</label>
-        <textarea id="description" name="description"
-                  rows="5" cols="33" placeholder="Ajouter un motif à l'evenement"></textarea>
-        <label for="datededebut">Début de la reservation</label>
-        <input type="date" name="datededebut">
-        <select name="heure1" id="heure1">
+    <div class="container">
+        <form action="#" method="post">
+            <label for="titre">Nom de l'evenement</label>
+            <input type="text" name="titre" placeholder="ajouter un titre à l'evenement">
+            <label for="description">Description de l'evenement</label>
+            <textarea id="description" name="description"
+                      rows="5" cols="33" placeholder="Ajouter un motif à l'evenement"></textarea>
+            <label for="datededebut">Début de la reservation</label>
+            <input type="date" name="datededebut">
+            <select name="heure1" id="heure1">
+                <?php
+                for ($i = 9; $i <= 18; $i++) {
+                    echo "<option value='$i'>$i";
+                }
+                ?>
+            </select>
+            <select name="heure2" id="heure2">
+                <option value="00">00</option>
+                <option value="30">30</option>
+
+            </select>
+            <label for="datedefin">Fin de la reservation</label>
+            <input type="date" name="datedefin">
+            <select name="fin1" id="fin1">
+                <?php
+                for ($i = 10; $i <= 19; $i++) {
+                    echo "<option value='$i'>$i";
+                }
+                ?>
+            </select>
+            <select name="fin2" id="fin2">
+                <option value="00">00</option>
+                <option value="30">30</option>
+            </select>
+
+            <input class="reserver" type="submit" name="submit" value="Reserver">
             <?php
-            for ($i = 9; $i <= 18; $i++) {
-                echo "<option value='$i'>$i";
+            if (isset($error1)) {
+                echo "<h3 class='error'>$error1</h3>";
+            }
+            if (isset($error2)) {
+                echo "<h3 class='error'>$error2</h3>";
+            }
+            if (isset($error3)) {
+                echo "<h3 class='error'>$error3</h3>";
             }
             ?>
-        </select>
-        <select name="heure2" id="heure2">
-            <option value="00">00</option>
-            <option value="30">30</option>
-
-        </select>
-        <label for="datedefin">Fin de la reservation</label>
-        <input type="date" name="datedefin">
-        <select name="fin1" id="fin1">
-            <?php
-            for ($i = 10; $i <= 19; $i++) {
-                echo "<option value='$i'>$i";
-            }
-            ?>
-        </select>
-        <select name="fin2" id="fin2">
-            <option value="00">00</option>
-            <option value="30">30</option>
-        </select>
-
-        <input type="submit" name="submit" value="Reserver">
-        <?php
-        if (isset($error1)) {
-            echo "<h3 class='error'>$error1</h3>";
-        }
-        if (isset($error2)) {
-            echo "<h3 class='error'>$error2</h3>";
-        }
-        if (isset($error3)) {
-            echo "<h3 class='error'>$error3</h3>";
-        }
-        ?>
-    </form>
-
+        </form>
+        <div class="img">
+            <h1>Reserver la salle des goudes! </h1>
+            <img class="img1" src="../asset/image/Goudes-conférences.jpg" alt="salle des goudes">
+        </div>
+    </div>
 
 </main>
 <footer>
