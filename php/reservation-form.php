@@ -35,8 +35,8 @@ if (isset($_POST['submit'])) {
             $titre = $_POST['titre'];
             $description = $_POST['description'];
             $req = mysqli_query(connectionbdd(), "INSERT INTO reservations(titre, description, debut, fin, id_utilisateur) VALUES ('$titre','$description','$date','$date2', '$id_user')");
-            header("location planning.php");
-
+            $register="Evenement bien enregister";
+            header("Refresh:2; url=planning.php");
         }
 
     }
@@ -54,7 +54,7 @@ if (isset($_POST['submit'])) {
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@1,100&display=swap');
     </style>
-    <title>reservation</title>
+    <title>formulaire de reservation</title>
 </head>
 <body>
 <header>
@@ -107,6 +107,9 @@ if (isset($_POST['submit'])) {
             }
             if (isset($error3)) {
                 echo "<h3 class='error'>$error3</h3>";
+            }
+            if (isset($register)){
+                echo "<h3>$register</h3>";
             }
             ?>
         </form>
