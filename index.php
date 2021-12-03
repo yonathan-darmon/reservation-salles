@@ -56,6 +56,7 @@
     <div id="high">
         <div class="slideshow">
             <ul>
+                <li><img src="asset/image/entréé%20du%20parc.jpg" alt><span>Bienvenue au parc Chanot</span></li>
                 <li><img src="asset/image/G1.jpg" alt><span>Le parc vu du ciel</span></li>
                 <li><img src="asset/image/G2.png" alt><span>Localisation de la salle</span></li>
                 <li><img src="asset/image/G3.jpg" alt><span>Séminaire de jour</span></li>
