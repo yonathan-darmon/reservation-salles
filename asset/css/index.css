@@ -248,3 +248,46 @@ a {
 button:hover {
     background-color: #E50074;
 }
+
+@media (max-width: 769px) {
+    #goude {
+        display: flex;
+        flex-direction: column;
+        color: #405565;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    #btn {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 10%;
+        margin-left: 22%;
+    }
+
+    form {
+        margin-left: 14%;
+    }
+}
+
+@media (max-width: 426px) {
+    .tab2 {
+        overflow: scroll;
+    }
+
+    #btn {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 10%;
+        margin-left: 0;
+    }
+
+    form {
+        margin-left: 22%;
+    }
+}
+
