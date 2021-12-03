@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -144,12 +147,16 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.476127147147!2d5.389251115804262!3d43.27291138495553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9b8a5835ebfa9%3A0x8345456cdbe33e53!2sMarseille%20Chanot!5e1!3m2!1sfr!2sfr!4v1638270354869!5m2!1sfr!2sfr"
                     width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
-
-        <div class="btn2">
-            <form action="">
-                <button type="submit"><a href="php/reservation-form.php">Réservez la salle</a></button>
+        <?php
+        if (isset($_SESSION['login'])){
+            echo"<div class='btn2'>
+            <form action='#'>
+                <button type='submit'><a href='php/reservation-form.php'>Réservez la salle</a></button>
             </form>
-        </div>
+        </div>";
+        }
+        ?>
+
 
         <div class="btn3">
             <form action="">
