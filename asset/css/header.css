@@ -1,12 +1,12 @@
 
 nav {
     font-family: 'Fira Sans Condensed', sans-serif;
-    font-size: large;
     display: flex;
     width: 98%;
     height: auto;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     border-radius: 15px;
+
 
 }
 
@@ -20,19 +20,21 @@ nav ul {
     justify-content: space-evenly;
     align-items: center;
     padding: 15px;
+    font-size: x-large;
+    font-weight: bold;
 }
 
 nav ul li {
     text-decoration: none;
     list-style: none;
-    color: #008CD3;
+    color: #405565;
     font-size: x-large;
     font-weight: bold;
 }
 
 li a {
     text-decoration: none;
-    color: #008CD3;
+    color: #405565;
 }
 
 li a:hover {
@@ -59,22 +61,25 @@ nav ul li ul {
     }
 
     nav img {
-    width: 40%;
+        width: 40%;
     }
-    footer{
+
+    footer {
         margin-top: 5%;
     }
 }
+
 @media (max-width: 376px) {
 
     nav ul {
-       text-align: center;
+        text-align: center;
     }
 
     nav img {
         width: 40%;
     }
-    footer{
+
+    footer {
         margin-top: 5%;
     }
 }
