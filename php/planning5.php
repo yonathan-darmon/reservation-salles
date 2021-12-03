@@ -1,25 +1,35 @@
 <?php
     session_start();
     require "fonction.php";
-   
-    /*if (isset($_GET['moins']==1)){
-        $req = mysqli_query(connectionbdd(), "SELECT *FROM reservations WHERE YEAR( debut ) = YEAR ( CURDATE() ) AND WEEK( debut ) = WEEK ( CURDATE()- INTERVAL 1 week  )");
-   
-    }
-    if (isset($_GET['plus']==2)){
-        $req = mysqli_query(connectionbdd(), "SELECT *FROM reservations WHERE YEAR( debut ) = YEAR ( CURDATE() ) AND WEEK( debut ) = WEEK ( CURDATE() + INTERVAL 1 week )");
 
-    }*/
-    //else{
-        $req = mysqli_query(connectionbdd(), "SELECT *FROM reservations WHERE YEAR( debut ) = YEAR ( CURDATE() ) AND WEEK( debut ) = WEEK ( CURDATE() )");
-    //}
+   
+    if (isset($_GET['moins'])){
+        $moins= $_GET['moins'];
+    $req = mysqli_query(connectionbdd(), "SELECT *FROM reservations WHERE YEARWEEK(debut)=YEARWEEK(NOW()- INTERVAL 1 WEEK)");
+        
     $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
-    // foreach($res as $key => $value);
-    // $date=strtotime($value['debut']);
-    // $reldate=timestampToDateSQL($date);
-    // var_dump($date);
-    // $req2=mysqli_query(connectionbdd(), "SELECT * DATEADD (week,1, $reldate) FROM reservation");
-    // $res2=mysqli_fetch_all($req2,MYSQLI_ASSOC);
+    
+}
+    elseif (isset($_GET['plus'])){
+        
+        $req = mysqli_query(connectionbdd(), "SELECT *FROM reservations WHERE YEARWEEK(debut)=YEARWEEK(NOW() + INTERVAL 1 WEEK)");
+       
+        $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
+        $week = date("w", mktime(0,0,0, +1));
+    }
+
+
+    else{
+        
+        $req = mysqli_query(connectionbdd(), "SELECT *FROM reservations WHERE YEAR( debut ) = YEAR ( CURDATE() ) AND WEEK( debut ) = WEEK ( CURDATE() )");
+        $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
+
+    }
+     foreach($res as $key => $value);
+     $date=strtotime($value['debut']);
+     $reldate=timestampToDateSQL($date);
+     $req2=mysqli_query(connectionbdd(), "SELECT * DATEADD (week,1, $reldate) FROM reservation");
+     //$res2=mysqli_fetch_all($req2,MYSQLI_ASSOC);
 
 ?>
 <!DOCTYPE html>
@@ -32,12 +42,10 @@
 </head>
 <body>
     <form action="#" method="get">
-        <center>
             
             <p class="text"> Planning </p>
-            <input class="moins" type="button" value="<" name="moins">
-            <input class="plus" type="button" value=">" name="plus">
-        </center>
+            <input class="moins" type="submit" value="<" name="moins">
+            <input class="plus" type="submit" value=">" name="plus">
     </form>
     <hr>
     <!--semaine-->

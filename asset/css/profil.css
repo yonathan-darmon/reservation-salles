@@ -10,27 +10,8 @@ body{
     background-color: #1f6864;
     
 }
-img{
-    width: 56%;
-    height: 174px;
-    margin-left: 70px;
-    margin-top: 100px;
-}
-form{
-    position: absolute;
-    right: 33%;
-    top: 15%;
-    background-color: #185b55;
-    width: 20%;
-    height: 400px;
-    border-top-right-radius: 1em;
-    border-bottom-right-radius: 1em;
-}
-input{
-    margin-left: 80px;
-    margin-top: 10px;
-    border-radius: 1em;
-}
+
+/*boite de gauche conteneur*/
 #conteneur{
     background: rgb(35,33,33);
     background: linear-gradient(97deg, rgba(35,33,33,1) 0%, rgba(17,102,96,1) 44%);
@@ -42,14 +23,46 @@ input{
     border-top-left-radius: 1em;
     border-bottom-left-radius: 1em;
 }
+img{
+    width: 56%;
+    height: 174px;
+    margin-left: 70px;
+    margin-top: 100px;
+}
+/*fin boite de gauche conteneur*/
+
+/*form*/
+form{
+    position: absolute;
+    right: 33%;
+    top: 15%;
+    background-color: #185b55;
+    width: 20%;
+    height: 400px;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
 .text{
     margin-left: 140px;
     margin-top: 10px;
     color: white;
 }
+.text2{
+    margin-left: 100px;
+    margin-top: 160px;
+    color: white;
+}
+.text3{
+    margin-left: 150px;
+}
 p{
     margin-left: 128px;
     color: white;
+}
+input{
+    margin-left: 80px;
+    margin-top: 10px;
+    border-radius: 1em;
 }
 .boite{
     margin-top: 150px;
@@ -66,3 +79,4 @@ p{
     transform: scale(1.05);
     transition: 1s;
 }
+/*fin form*/
