@@ -1,5 +1,5 @@
 <nav class="header">
-s
+
     <img src="../asset/image/logo_chanot.png" alt="logo chanot">
     <ul>
 
