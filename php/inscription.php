@@ -68,6 +68,7 @@ if (isset ($_POST['inscription'])) {
                 <div class="inp">
                     <input type="submit" name="inscription" value="Je m'inscris"/>
                 </div>
+            </form>
         </div>
         <img src="../asset/image/marseille-chanot-2.jpg" alt="conference">
     </div>
