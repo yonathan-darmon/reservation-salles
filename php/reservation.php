@@ -5,10 +5,10 @@ if (isset($_POST['deco'])) {
     header("location:../index.php");
     session_destroy();
 }
-if(isset($_GET['id'])){
-    $idevent=$_GET['id'];
-    $req=mysqli_query(connectionbdd(),"SELECT * FROM reservation INNER JOIN utilisateurs where reservation.id='$idevent'AND reservation.id_utilisateur=utilisateurs.id");
-    $res=mysqli_fetch_all($req,MYSQLI_ASSOC);
+if (isset($_GET['id'])) {
+    $idevent = $_GET['id'];
+    $req = mysqli_query(connectionbdd(), "SELECT * FROM reservation INNER JOIN utilisateurs where reservation.id='$idevent'AND reservation.id_utilisateur=utilisateurs.id");
+    $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
 
 }
 ?>

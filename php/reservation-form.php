@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
             $titre = $_POST['titre'];
             $description = $_POST['description'];
             $req = mysqli_query(connectionbdd(), "INSERT INTO reservations(titre, description, debut, fin, id_utilisateur) VALUES ('$titre','$description','$date','$date2', '$id_user')");
-            $register="Evenement bien enregister";
+            $register = "Evenement bien enregister";
             header("Refresh:2; url=planning.php");
         }
 
@@ -108,7 +108,7 @@ if (isset($_POST['submit'])) {
             if (isset($error3)) {
                 echo "<h3 class='error'>$error3</h3>";
             }
-            if (isset($register)){
+            if (isset($register)) {
                 echo "<h3>$register</h3>";
             }
             ?>
