@@ -8,6 +8,9 @@ img {
 
 }
 
+p {
+    color: #405565;
+}
 
 .slideshow {
 
@@ -164,40 +167,46 @@ img {
 
 h1 {
     text-align: center;
+    color: #405565;
 }
 
 #goude {
     display: flex;
     justify-content: space-between;
+    color: #405565;
 }
 
 .tab1 {
     margin-top: 50px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    height: 80%;
 }
 
 .tab2 {
     margin-top: 50px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+
 }
 
 .tab1 table th {
-    background-color: rgb(125, 125, 136);
+    background-color: wheat;
     padding: 10px;
 }
 
 .tab1 table td {
-    background-color: rgb(217, 220, 226);
+    background-color: antiquewhite;
     width: 150px;
     text-align: center;
 }
 
 .tab2 table th {
-    background-color: rgb(125, 125, 136);
+    background-color: wheat;
     width: 15px;
     padding: 20px;
 }
 
 .tab2 table td {
-    background-color: rgb(217, 220, 226);
+    background-color: antiquewhite;
     text-align: center;
 }
 
@@ -237,5 +246,5 @@ a {
 }
 
 button:hover {
-    background-color: black;
+    background-color: #E50074;
 }
