@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (isset($_POST['deco'])) {
+    header("location:../index.php");
+    session_destroy();
+}
 require "fonction.php";
 if (isset($_POST['submit'])) {
     if (!isset($_POST['login']) || !isset($_POST['password'])) {

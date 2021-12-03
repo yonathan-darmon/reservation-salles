@@ -47,6 +47,12 @@ nav ul li ul {
 
 .deco {
     color: black;
+    background-color: transparent;
+    border-radius: 15px;
+    width: 50%;
+}
+.deco:hover{
+    background-color:#E50074 ;
 }
 
 @media (max-width: 426px) {

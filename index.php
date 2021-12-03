@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (isset($_POST['deco'])) {
+    header("location:index.php");
+    session_destroy();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -148,8 +152,8 @@ session_start();
                     width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <?php
-        if (isset($_SESSION['login'])){
-            echo"<div class='btn2'>
+        if (isset($_SESSION['login'])) {
+            echo "<div class='btn2'>
             <form action='#'>
                 <button type='submit'><a href='php/reservation-form.php'>Réservez la salle</a></button>
             </form>
