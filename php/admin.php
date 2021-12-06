@@ -7,9 +7,17 @@ session_start();
 $req = mysqli_query(connectionbdd(), "SELECT * FROM reservations");
 $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
 $array = mysqli_fetch_all($req, MYSQLI_ASSOC);
-
+if (isset($_SESSION['login'])){
 foreach($array as $key=>$value);
-
+}
+else{
+    $value['titre']="";
+    $value['description']="";
+    $value['deb']="";
+    $value['fin']="";
+    Echo "<h1>Vous n'etes pas l admin</h1>";
+    header('Refresh:1 ; URL=connexion.php');
+}
    if(isset($_POST['submit'])) {
 
       $log = $_POST['login'];
