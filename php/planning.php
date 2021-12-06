@@ -43,8 +43,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../asset/css/planning.css">
+    <link rel="stylesheet" href="../asset/css/header.css">
 </head>
 <body>
+    <header>
+        <?php
+            require "header.php";
+        ?>
+    </header>
+     <hr>
     <form action="#" method="get">
             
             <p class="text"> Planning </p>
@@ -123,5 +130,11 @@
         ?>
     </tbody>
     </table>
+
+    <footer>
+        <?php
+            require "footer.php";
+        ?>
+    </footer>
 </body>
 </html>

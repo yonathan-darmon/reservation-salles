@@ -2,6 +2,7 @@ a{
     text-decoration: none;
     color: black;
 }
+/*form*/
 table{
     width: 100%;
     height: calc(100vh);
@@ -18,14 +19,36 @@ tbody td{
 tbody td:hover{
     transform:scale(1.02);
 }
+form{
+    margin-top: 5px;
+}
+input{
+    border-radius: 5px;
+    cursor: pointer;
+}
 .moins{
+    padding: 10px;
     margin-right: 130px;
+    background: url(https://cdn.icon-icons.com/icons2/1369/PNG/512/-chevron-left_89825.png);
+    background-position: center;
+    background-size: cover;
+    color: #ffffff00;
+    background-color: white;
 }
 .plus{
+    padding: 10px;
     margin-left: 130px;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJOE1h1T-VIjgWG7bphOcmlfc90W4-6E2L33U81rPE4ciAWkaPioerTzsOe60V36EXA9E&usqp=CAU);
+    background-position: center;
+    background-size: cover;
+    color: #ffffff00;
+}
+.actuel{
+    padding: 10px;
 }
 .text{
     position: absolute;
     left: 48.2%;
-    top: -1%;
+    top: 16%;
 }
+/*fin form*/
