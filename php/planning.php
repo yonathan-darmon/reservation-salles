@@ -91,10 +91,10 @@
                 <tr>
                     <?php
                         //jours
-                        for($j=1; $j<9; $j++) { ?>
+                        for($j=0; $j<8; $j++) { ?>
                             <td><a href=./reservation-form.php>
                                 <?php
-                                 if($j==1) {
+                                 if($j==0) {
                                     echo $i. "h00";
                                 }
                                   foreach($res as $key=>$value){
@@ -114,7 +114,7 @@
                             
                                 ?>
                             </a></td>
-                   <?php }
+                   <?php } 
                     ?>
                 </tr>
        <?php }
