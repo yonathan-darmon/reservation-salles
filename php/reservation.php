@@ -7,10 +7,11 @@ if (isset($_POST['deco'])) {
 }
 if (isset($_GET['id'])) {
     $idevent = $_GET['id'];
-    $req = mysqli_query(connectionbdd(), "SELECT * FROM reservation INNER JOIN utilisateurs where reservation.id='$idevent'AND reservation.id_utilisateur=utilisateurs.id");
+    $req = mysqli_query(connectionbdd(), "SELECT * FROM reservations INNER JOIN utilisateurs WHERE reservations.id='$idevent'AND reservations.id_utilisateur=utilisateurs.id");
     $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
 
 }
+var_dump($res);
 ?>
 <!doctype html>
 <html lang="en">
@@ -34,16 +35,17 @@ if (isset($_GET['id'])) {
     <div class="container">
         <form action="#" method="post">
             <label for="login">Nom du créateur</label>
-            <input type="text" name="login" id="login" value="">
+            <input type="text" name="login" id="login" value="<?php echo $res[0]['login']; ?>">
             <label for="titre">Titre de l'evenement</label>
-            <input type="text" name="titre" id="titre" value="">
+            <input type="text" name="titre" id="titre" value="<?php echo $res[0]['titre']; ?>">
             <label for="description">Description de l'evenement</label>
             <textarea id="description" name="description"
-                      rows="5" cols="33" placeholder="Ajouter un motif à l'evenement"></textarea>
+                      rows="5" cols="33" placeholder="Ajouter un motif à l'evenement"><?php echo $res[0]['description']; ?></textarea>
             <label for="debut">Heure de début</label>
-            <input type="text" name="debut" id="debut" value="">
+            <input type="text" name="debut" id="debut" value="<?php $str2=strtotime($res[0]['debut']); echo date('d-m-Y H:i',$str2) ?>">
             <label for="fin">Heure de fin</label>
-            <input type="text" name="fin" id="fin" value="">
+            <input type="text" name="fin" id="fin" value="<?php
+            $str=strtotime($res[0]['fin']); echo date('d-m-Y H:i',$str ); ?>">
         </form>
         <img src="../asset/image/parc-chanot-salon-entrepreneur.jpg" alt="exterieur chanot">
     </div>

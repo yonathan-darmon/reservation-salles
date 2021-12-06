@@ -99,7 +99,7 @@
                     <?php
                         //jours
                         for($j=0; $j<8; $j++) { ?>
-                            <td><a href=./reservation-form.php>
+                            <td><!--<a href=./reservation-form.php>-->
                                 <?php
                                  if($j==0) {
                                     echo $i. "h00";
@@ -115,7 +115,8 @@
                                
 
                                 if($i==$hour && $j==$day_of_week) {
-                                    echo $value['description'];
+                                    echo '<a href=reservation.php?id='.$value['id'].'>'. $value['description'].'</a>';
+
                                 }
                             }
                             
