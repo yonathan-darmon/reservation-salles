@@ -63,7 +63,7 @@
             }
             ?> name="moins">
 
-            <input class="actuel" type="submit" value="semaine actuelle" name="actuel">
+            <input class="actuel" type="submit" value="Revenir à la semaine actuelle" name="actuel">
 
             <input class="plus" type="submit" value=<?php if(isset($_GET['plus'])) {
                 echo $_GET['plus'] +1;
