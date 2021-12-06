@@ -1,5 +1,6 @@
 <?php
 session_start();
+var_dump($_SESSION);
 if (isset($_POST['deco'])) {
     header("location:../index.php");
     session_destroy();
@@ -10,7 +11,7 @@ if (isset($_POST['submit'])) {
         $error1 = "Veuillez remplir tout les champs";
     } else {
         foreach (result() as $key => $value) {
-            if ($_POST['login'] == $value['login'] && $_POST['password'] == $value["password"]) {
+            if ($_POST['login'] == $value['login'] && password_verify($_POST['password'],$value['password'])) {
                 $_SESSION['login'] = $_POST['login'];
                 $_SESSION['password'] = $_POST['password'];
                 $connect = "Vous etes bien connecté";
