@@ -23,18 +23,18 @@
     }
 
 
-    /*else{
+    else{
         
         $req = mysqli_query(connectionbdd(), "SELECT *FROM reservations WHERE YEAR( debut ) = YEAR ( CURDATE() ) AND WEEK( debut ) = WEEK ( CURDATE() )");
         $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
-    }*/
+    }
 
-     /*foreach($res as $key => $value) {
+     foreach($res as $key => $value) {
      $date=strtotime($value['debut']);
      $reldate=timestampToDateSQL($date);
      $req2=mysqli_query(connectionbdd(), "SELECT * DATEADD (week,1, $reldate) FROM reservation");
      //$res2=mysqli_fetch_all($req2,MYSQLI_ASSOC);
-     }*/
+     }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
