@@ -7,7 +7,7 @@ session_start();
 $req = mysqli_query(connectionbdd(), "SELECT * FROM reservations");
 $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
 $array = mysqli_fetch_all($req, MYSQLI_ASSOC);
-if (isset($_SESSION['login'])){
+if (isset($_SESSION['login'])&& $_SESSION['login']=='admin'){
 foreach($array as $key=>$value);
 }
 else{
