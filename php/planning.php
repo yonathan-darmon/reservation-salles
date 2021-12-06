@@ -115,7 +115,13 @@
                                
 
                                 if($i==$hour && $j==$day_of_week) {
-                                    echo '<a href=reservation.php?id='.$value['id'].'>'. $value['description'].'</a>';
+                                    if(empty($_SESSION['login'])) {
+                                        echo $value['description'];
+                                    }
+                                    else{
+                                        echo '<a href=reservation.php?id='.$value['id'].'>'. $value['description'].'</a>';
+                                    }
+                                    
 
                                 }
                             }
