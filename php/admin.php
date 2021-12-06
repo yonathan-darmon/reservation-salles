@@ -1,8 +1,12 @@
 <?php
-
+session_start();
 require("fonction.php");
 
-session_start();
+
+if (isset($_POST['deco'])) {
+    header("location:../index.php");
+    session_destroy();
+}
 $req = mysqli_query(connectionbdd(), "SELECT * FROM reservations");
 $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
 
@@ -92,8 +96,11 @@ if (isset($_POST['submit'])) {
             <h2>Titre</h2>
             <input type="text" name="titre" id="titre" value=" <?php
             foreach ($res as $key => $value) {
-                if ($value['id'] == $_POST['iduser']) {
+                if (isset($_POST['iduser'])&& $value['id'] == $_POST['iduser']) {
                     echo $value['titre'];
+                }
+                else{
+                    echo "";
                 }
 
             }
@@ -102,8 +109,11 @@ if (isset($_POST['submit'])) {
             <h2>Description</h2>
             <input type="text" name="desc" id="desc" value='<?php
             foreach ($res as $key => $value) {
-                if ($value['id'] == $_POST['iduser']) {
+                if (isset($_POST['iduser'])&&$value['id'] == $_POST['iduser']) {
                     echo $value['description'];
+                }
+                else{
+                    echo "";
                 }
 
             } ?>'>
@@ -111,8 +121,11 @@ if (isset($_POST['submit'])) {
             <h2>Début</h2>
             <input type="text" name="deb" id="deb" value='<?php
             foreach ($res as $key => $value) {
-                if ($value['id'] == $_POST['iduser']) {
+                if (isset($_POST['iduser'])&&$value['id'] == $_POST['iduser']) {
                     echo $value['debut'];
+                }
+                else{
+                    echo "";
                 }
 
             } ?>'>
@@ -120,8 +133,11 @@ if (isset($_POST['submit'])) {
             <h2>Fin</h2>
             <input type="text" name="fin" id="fin" value='<?php
             foreach ($res as $key => $value) {
-                if ($value['id'] == $_POST['iduser']) {
+                if (isset($_POST['iduser'])&&$value['id'] == $_POST['iduser']) {
                     echo $value['fin'];
+                }
+                else{
+                    echo "";
                 }
 
             } ?>'>

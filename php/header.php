@@ -15,6 +15,9 @@
         <?php
         if (isset($_SESSION['login'])) {
             echo "  <li><a href='profil.php'>Mes informations</a></li>";
+            if($_SESSION['login']=='admin'){
+                echo "  <li><a href='admin.php'>La page Admin</a></li>";
+            }
 
             $deco = "<form action='#' method='post' id='deco'><input type='submit' name='deco' class='deco' value='Deconnexion'></form>";
 
