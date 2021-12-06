@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (isset($_POST['deco'])) {
+    header("location:../index.php");
+    session_destroy();
+}
 require "fonction.php";
 if (isset($_POST['submit'])) {
     if (!isset($_POST['login']) || !isset($_POST['password'])) {
@@ -39,25 +43,31 @@ if (isset($_POST['submit'])) {
     <?php require "header.php" ?>
 </header>
 <main>
-    <form action="#" method="post">
-        <label for="login">Nom d'utilisateur</label>
-        <input type="text" name="login" placeholder="Votre login">
-        <label for="password">Mot de passe</label>
-        <input type="text" name="password" placeholder="Votre mot de passe">
-        <input type="submit" name="submit" value="connexion">
-        <?php
-        if (isset($error1)) {
-            echo $error1;
-        }
-        if (isset($error2)) {
-            echo $error2;
-        }
-        if (isset($connect)) {
-            echo $connect;
-        }
-        ?>
+    <div class="container">
+        <form action="#" method="post">
+            <label for="login">Nom d'utilisateur</label>
+            <input type="text" name="login" placeholder="Votre login">
+            <label for="password">Mot de passe</label>
+            <input type="text" name="password" placeholder="Votre mot de passe">
+            <input class="connex" type="submit" name="submit" value="connexion">
+            <?php
+            if (isset($error1)) {
+                echo $error1;
+            }
+            if (isset($error2)) {
+                echo $error2;
+            }
+            if (isset($connect)) {
+                echo $connect;
+            }
+            ?>
 
-    </form>
+        </form>
+        <div class="img">
+            <h1>Si vous souhaitez reserver la salle connectez vous!</h1>
+            <img src="../asset/image/parc-chanot-marseille-3-1.jpg" alt="entrée de chanot">
+        </div>
+    </div>
 </main>
 <footer>
     <?php require "footer.php" ?>
