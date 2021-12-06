@@ -35,6 +35,9 @@ input{
     color: #ffffff00;
     background-color: white;
 }
+.moins:hover{
+    transform: scale(1.05);
+}
 .plus{
     padding: 10px;
     margin-left: 130px;
@@ -43,12 +46,23 @@ input{
     background-size: cover;
     color: #ffffff00;
 }
+.plus:hover{
+    transform: scale(1.05);
+}
 .actuel{
     padding: 10px;
+    color: #405565;
+    font-style: italic;
+}
+.actuel:hover{
+    transform: scale(1.05);
 }
 .text{
     position: absolute;
     left: 48.2%;
-    top: 16%;
+    top: 14%;
+    color: #405565;
+    font-size: 25px;
+    font-style: italic;
 }
 /*fin form*/

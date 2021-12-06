@@ -11,6 +11,7 @@ if (isset($_GET['id'])) {
     $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
 
 }
+var_dump($_GET);
 var_dump($res);
 ?>
 <!doctype html>
