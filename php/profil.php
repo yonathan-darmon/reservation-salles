@@ -16,7 +16,7 @@
         }
 
         //requête pour modifer les données de l'utilisateur
-        $req = mysqli_query(connecyionbdd(), "UPDATE `utilisateurs`  SET `login`= '$login', `password`= '$password' WHERE `login`= '$actuallogin' ");
+        $req = mysqli_query(connecyionbdd(), "UPDATE `utilisateurs`  SET `login`= '$login', `password`= '$hash' WHERE `login`= '$actuallogin' ");
 
         //afficher la nouvelle session
         $_SESSION['login'] = $login;
