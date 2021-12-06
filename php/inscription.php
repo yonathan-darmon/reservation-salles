@@ -14,7 +14,8 @@ if (isset ($_POST['inscription'])) {
     $password2 = $_POST['password2'];
 
     if (!empty($_POST['login']) && !empty($_POST['password'])) {
-        $sql = "INSERT INTO utilisateurs(login, password) VALUES ('$login', '$password')";
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        $sql = "INSERT INTO utilisateurs(login, password) VALUES ('$login', '$hash')";
 
         $sel = mysqli_query(connectionbdd(), "SELECT * FROM utilisateurs WHERE login = '" . $_POST['login'] . "'");
         if (mysqli_num_rows($sel)) {
