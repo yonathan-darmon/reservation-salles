@@ -120,6 +120,7 @@ foreach ($res as $key => $value) {
                                 echo $value['titre'];
                             } else {
                                 echo '<a href=reservation.php?id=' . $value['id'] . '> Titre de l\'evenement : ' . $value['titre'] . '</a>';
+
                             }
 
 
