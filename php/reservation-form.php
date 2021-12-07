@@ -81,7 +81,7 @@ if (isset($_POST['submit'])) {
             </select>
             <select name="heure2" id="heure2">
                 <option value="00">00</option>
-                <option value="30">30</option>
+
 
             </select>
             <label for="datedefin">Fin de la reservation</label>
@@ -95,7 +95,7 @@ if (isset($_POST['submit'])) {
             </select>
             <select name="fin2" id="fin2">
                 <option value="00">00</option>
-                <option value="30">30</option>
+
             </select>
 
             <input class="reserver" type="submit" name="submit" value="Reserver">
