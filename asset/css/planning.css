@@ -1,63 +1,76 @@
-a{
+a {
     text-decoration: none;
     color: black;
 }
+
 /*form*/
-table{
+table {
     width: 100%;
     height: calc(100vh);
 }
-tbody th{
+
+tbody th {
     border: 1px solid blue;
 }
-tbody td{
+
+tbody td {
     border: 1px solid blue;
     padding: 10px;
     vertical-align: top;
     width: 14.29%;
 }
-tbody td:hover{
-    transform:scale(1.02);
+
+tbody td:hover {
+    transform: scale(1.02);
 }
-form{
+
+form {
     margin-top: 5px;
 }
-input{
+
+input {
     border-radius: 5px;
     cursor: pointer;
 }
-.moins{
+
+.moins {
     padding: 10px;
     margin-right: 130px;
-    background: url(https://cdn.icon-icons.com/icons2/1369/PNG/512/-chevron-left_89825.png);
+    background-image: url("../image/chevron gauche.jpg");
     background-position: center;
     background-size: cover;
     color: #ffffff00;
     background-color: white;
 }
-.moins:hover{
+
+.moins:hover {
     transform: scale(1.05);
 }
-.plus{
+
+.plus {
     padding: 10px;
     margin-left: 130px;
-    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJOE1h1T-VIjgWG7bphOcmlfc90W4-6E2L33U81rPE4ciAWkaPioerTzsOe60V36EXA9E&usqp=CAU);
+    background-image: url("../image/chevron droite.jpg");
     background-position: center;
     background-size: cover;
     color: #ffffff00;
 }
-.plus:hover{
+
+.plus:hover {
     transform: scale(1.05);
 }
-.actuel{
+
+.actuel {
     padding: 10px;
     color: #405565;
     font-style: italic;
 }
-.actuel:hover{
+
+.actuel:hover {
     transform: scale(1.05);
 }
-.text{
+
+.text {
     position: absolute;
     left: 48.2%;
     top: 14%;
@@ -65,4 +78,5 @@ input{
     font-size: 25px;
     font-style: italic;
 }
+
 /*fin form*/

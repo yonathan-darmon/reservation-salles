@@ -1,11 +1,10 @@
 <?php
 session_start();
-
 if (isset($_POST['deco'])) {
     header("location:../index.php");
     session_destroy();
 }
-
+var_dump($_POST);
 require "fonction.php";
 if (isset($_POST['submit'])) {
     if (!isset($_POST['titre']) || !isset($_POST['description']) || !isset($_POST['datededebut']) || !isset($_POST['datedefin'])) {
@@ -28,16 +27,24 @@ if (isset($_POST['submit'])) {
         } else {
             $log = $_SESSION['login'];
             $mdp = $_SESSION['password'];
-            $req2 = mysqli_query(connectionbdd(), "SELECT id FROM utilisateurs WHERE login='$log' AND password='$mdp'");
+            $req2 = mysqli_query(connectionbdd(), "SELECT id FROM utilisateurs WHERE login='$log'");
             $res2 = mysqli_fetch_all($req2, MYSQLI_ASSOC);
-
-            $id = $res2[0]['id'];
-            $id_user = $id;
+            $id_user = $res2[0]['id'];
             $titre = $_POST['titre'];
             $description = $_POST['description'];
-            $req = mysqli_query(connectionbdd(), "INSERT INTO reservations(titre, description, debut, fin, id_utilisateur) VALUES ('$titre','$description','$date','$date2', '$id_user')");
-            $register = "Evenement bien enregister";
-            header("Refresh:2; url=planning.php");
+            $req3 = mysqli_query(connectionbdd(), "SELECT debut FROM reservations");
+            $res3 = mysqli_fetch_all($req3, MYSQLI_ASSOC);
+            foreach ($res3 as $key => $value) {
+                if ($value['debut'] == $date) {
+                    $error4 = 'Cette date est deja prise';
+                    break(1);
+                } else {
+                    $req = mysqli_query(connectionbdd(), "INSERT INTO reservations(titre, description, debut, fin, id_utilisateur) VALUES ('$titre','$description','$date','$date2', '$id_user')");
+                    $register = "Evenement bien enregister";
+                    header("Refresh 2,url=planning.php");
+                }
+            }
+
         }
 
     }
@@ -111,6 +118,9 @@ if (isset($_POST['submit'])) {
             }
             if (isset($register)) {
                 echo "<h3>$register</h3>";
+            }
+            if (isset($error4)) {
+                echo "<h3>$error4</h3>";
             }
             ?>
         </form>
