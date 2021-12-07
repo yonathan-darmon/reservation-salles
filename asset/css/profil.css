@@ -32,10 +32,11 @@ img{
 /*fin boite de gauche conteneur*/
 
 /*form*/
-form{
+.profil4{
     position: absolute;
     right: 33%;
     top: 15%;
+    padding-top: 5px;
     background-color: #185b55;
     width: 20%;
     height: 400px;
@@ -62,6 +63,7 @@ p{
 input{
     margin-left: 80px;
     margin-top: 10px;
+    padding-left: 5px;
     border-radius: 1em;
 }
 .boite{
