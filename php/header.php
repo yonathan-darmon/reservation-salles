@@ -15,6 +15,7 @@
         <?php
         if (isset($_SESSION['login'])) {
             echo "  <li><a href='profil.php'>Mes informations</a></li>";
+            echo "  <li><a href='reservation-form.php'>Réserver la salle</a></li>";
             if($_SESSION['login']=='admin'){
                 echo "  <li><a href='admin.php'>La page Admin</a></li>";
             }
