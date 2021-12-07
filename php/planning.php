@@ -4,6 +4,12 @@
 
     //$req = mysqli_query(connectionbdd(), "SELECT `id_utilisateur`, `titre` FROM reservations INNER JOIN utilisateurs WHERE reservations.id_utilisateur=id_utilisateur");
 
+    //bouton déconnexion
+    if (isset($_POST['deco'])) {
+        header("location:../index.php");
+        session_destroy();
+    }
+
    //semaine précédente//
     if (isset($_GET['moins'])){
         $moins= $_GET['moins'];

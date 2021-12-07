@@ -2,6 +2,12 @@
     //ouverture de la session
     session_start();
     require "fonction.php";
+    
+    //bouton déconnexion
+    if (isset($_POST['deco'])) {
+        header("location:../index.php");
+        session_destroy();
+    }
 
     //récuperer et pré-remplir le formulaire
     if($_SESSION != null){
@@ -61,7 +67,7 @@
         echo '<img src="https://www.kindpng.com/picc/m/269-2697881_computer-icons-user-clip-art-transparent-png-icon.png">' echo $_SESSION['login'];
     }*/
     ?>
-    <form action="#" method="post">
+    <form class="profil4" action="#" method="post">
         <?php
         //si l'utilisateur n'est pas connecté affiche pas connecté sinon affiche le formulaire de connexion
         if(empty($_SESSION['login'])) { ?>
