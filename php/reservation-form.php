@@ -14,6 +14,7 @@ if (isset($_POST['submit'])) {
         $date1 = $_POST['datededebut'] . '-' . $_POST['heure1'] . ':' . $_POST['heure2'];
         $date2 = $_POST['datedefin'] . '-' . $_POST['fin1'] . ':' . $_POST['fin2'];
         $timestamp1 = strtotime($date1);
+
         $timestamp2 = strtotime($date2);
         $date = timestampToDateSQL($timestamp1);
         $date2 = timestampToDateSQL($timestamp2);
