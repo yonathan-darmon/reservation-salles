@@ -2,6 +2,8 @@
     session_start();
     require "fonction.php";
 
+    //$req = mysqli_query(connectionbdd(), "SELECT `id_utilisateur`, `titre` FROM reservations INNER JOIN utilisateurs WHERE reservations.id_utilisateur=id_utilisateur");
+
    //semaine précédente//
     if (isset($_GET['moins'])){
         $moins= $_GET['moins'];

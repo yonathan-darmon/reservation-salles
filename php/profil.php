@@ -2,22 +2,30 @@
     //ouverture de la session
     session_start();
     require "fonction.php";
+
+    //récuperer et pré-remplir le formulaire
+    if($_SESSION != null){
+        $session = $_SESSION['login'];
+        $req2 = mysqli_query(connectionbdd(), "SELECT * FROM `utilisateurs` WHERE `login` = '$session'");
+        $res = $req2->fetch_array();
+    }
     
     if(isset($_POST['submit'])) {
         $login = $_POST['login'];
         $actuallogin = $_SESSION['login'];
         $password = $_POST['password'];
 
-        //récuperer et pré-remplir le formulaire
-        if($_SESSION != null){
-            $session = $_SESSION['login'];
-            $req2 = mysqli_query(connecctionbdd(), "SELECT * FROM `utilisateurs` WHERE `login` = '$session'");
-            $res = $req2->fetch_array();
+        //scripté password
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+
+        if(empty($password)){
+			//requête pour modifier les informations de l'utilisateur
+            $req = mysqli_query(connectionbdd(), "UPDATE `utilisateurs`  SET `login`= '$login' WHERE `login`= '$actuallogin' ");
+		}
+        else{
+            //requête pour modifer les données de l'utilisateur
+            $req = mysqli_query(connectionbdd(), "UPDATE `utilisateurs`  SET `login`= '$login', `password`= '$hash' WHERE `login`= '$actuallogin' ");
         }
-
-        //requête pour modifer les données de l'utilisateur
-        $req = mysqli_query(connecyionbdd(), "UPDATE `utilisateurs`  SET `login`= '$login', `password`= '$hash' WHERE `login`= '$actuallogin' ");
-
         //afficher la nouvelle session
         $_SESSION['login'] = $login;
         header("Location: profil.php");
@@ -63,7 +71,7 @@
                         <p>Login</p>
                         <input type="text" name="login" value= <?php echo $res['login']; ?>>
                         <p>password</p>
-                        <input type="password" name="password" value=<?php echo $res['password']; ?>>
+                        <input type="password" name="password">
                         <br>
                         <input class="bouton" type="submit" value="Enregistrer" name="submit">
                     </div>
