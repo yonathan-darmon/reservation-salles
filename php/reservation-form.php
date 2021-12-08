@@ -41,7 +41,8 @@ if (isset($_POST['submit'])) {
                 } else {
                     $req = mysqli_query(connectionbdd(), "INSERT INTO reservations(titre, description, debut, fin, id_utilisateur) VALUES ('$titre','$description','$date','$date2', '$id_user')");
                     $register = "Evenement bien enregister";
-                    header("Refresh 2,url=planning.php");
+                    header("Refresh 1,url=planning.php");
+                    break(1);
                 }
             }
 

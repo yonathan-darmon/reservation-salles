@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (isset($_POST['deco'])) {
+    header("location:../index.php");
+    session_destroy();
+}
 require "fonction.php";
 
 //semaine précédente//

@@ -21,6 +21,7 @@ if (isset ($_POST['inscription'])) {
         if (mysqli_num_rows($sel)) {
             exit('Ce login existe déjà');
 
+
         }
         if ($password == $password2) {
             mysqli_query(connectionbdd(), $sql);

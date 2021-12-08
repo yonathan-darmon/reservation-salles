@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
                 $_SESSION['password'] = $_POST['password'];
                 $connect = "Vous etes bien connecté";
                 header('Refresh:3 ; URL=planning.php');
-            } else {
+            } elseif($_POST['login']!=$value['login'] || $_POST['password']!= $value['password']){
                 $error2 = "verifier votre login/mot de passe";
             }
         }
