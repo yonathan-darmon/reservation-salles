@@ -24,7 +24,7 @@ elseif (isset($_GET['plus'])) {
 
     $req = mysqli_query(connectionbdd(), "SELECT *FROM reservations INNER JOIN utilisateurs ON id_utilisateur=utilisateurs.id WHERE YEAR( debut ) = YEAR ( CURDATE() ) AND WEEK( debut ) = WEEK ( CURDATE() )");
     $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
-    var_dump($res);
+    
 }
 
 foreach ($res as $key => $value) {
