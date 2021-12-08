@@ -59,8 +59,8 @@
         
             <?php } else { ?>
                 <div id="conteneur">
-                    <img src="https://www.kindpng.com/picc/m/269-2697881_computer-icons-user-clip-art-transparent-png-icon.png">
-                    <?php echo '<p class="text"> profil de </p>'; echo $_SESSION['login']; ?>
+                    <img class="image1" src="https://www.kindpng.com/picc/m/269-2697881_computer-icons-user-clip-art-transparent-png-icon.png">
+                    <?php echo '<p class="text"> profil de ' . $_SESSION['login']. '</p>'; ?>
                 </div>
             <?php } ?>
     <?php /*if(isset($res)) {

@@ -6,7 +6,7 @@
 }
 main{
     position: relative;
-    min-height: 500px;
+    min-height: 80vh;
 }
 
 
@@ -22,7 +22,7 @@ main{
     border-top-left-radius: 1em;
     border-bottom-left-radius: 1em;
 }
-img{
+.image1{
     width: 56%;
     height: 174px;
     margin-left: 70px;
@@ -37,7 +37,7 @@ img{
     top: 15%;
     padding-top: 5px;
     width: 20%;
-    height: 400px;
+    height: 395px;
     border-top-right-radius: 1em;
     border-bottom-right-radius: 1em;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
