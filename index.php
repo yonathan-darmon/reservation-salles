@@ -193,7 +193,7 @@ if (isset($_POST['deco'])) {
                         echo "<a href='reservation-form.php'>Réserver la salle </a>";
                     }
                     ?></li>
-                <li><a href="/php/planning.php">La page du planning</a></li>
+                <li><a href="php/planning.php">La page du planning</a></li>
             </ul>
         </li>
     </ul>
