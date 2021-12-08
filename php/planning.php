@@ -122,7 +122,7 @@ foreach ($res as $key => $value) {
 
                         if ($i == $hour && $j == $day_of_week) {
                             if (empty($_SESSION['login'])) {
-                                echo $value['titre'];
+                                echo $value['titre'].'<br>'. 'utilisateur = '.$value['login'];
                             } else {
                                 echo '<a href=reservation.php?id=' . $value['id'] . '> Titre de l\'evenement : ' . $value['titre'] . '<br>'.'utilisateur = '.$value['login'].
                                 '</a>';
