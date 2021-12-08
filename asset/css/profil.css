@@ -1,20 +1,19 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    color: #405565;
 }
 main{
     position: relative;
     min-height: 500px;
 }
-body{
-    background-color: #1f6864;
-    
-}
+
 
 /*boite de gauche conteneur*/
 #conteneur{
-    background: rgb(35,33,33);
-    background: linear-gradient(97deg, rgba(35,33,33,1) 0%, rgba(17,102,96,1) 44%);
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+
     width: 20%;
     height: 400px;
     position: absolute;
@@ -37,28 +36,26 @@ img{
     right: 33%;
     top: 15%;
     padding-top: 5px;
-    background-color: #185b55;
     width: 20%;
     height: 400px;
     border-top-right-radius: 1em;
     border-bottom-right-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+
 }
 .text{
     margin-left: 140px;
     margin-top: 10px;
-    color: white;
 }
 .text2{
     margin-left: 100px;
     margin-top: 160px;
-    color: white;
 }
 .text3{
     margin-left: 150px;
 }
 p{
     margin-left: 128px;
-    color: white;
 }
 input{
     margin-left: 80px;
@@ -80,5 +77,7 @@ input{
 .bouton:hover{
     transform: scale(1.05);
     transition: 1s;
+    background-color: #E50074;
+
 }
 /*fin form*/
