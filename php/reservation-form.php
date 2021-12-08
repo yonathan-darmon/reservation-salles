@@ -4,7 +4,6 @@ if (isset($_POST['deco'])) {
     header("location:../index.php");
     session_destroy();
 }
-var_dump($_POST);
 require "fonction.php";
 if (isset($_POST['submit'])) {
     if (!isset($_POST['titre']) || !isset($_POST['description']) || !isset($_POST['datededebut']) || !isset($_POST['datedefin'])) {

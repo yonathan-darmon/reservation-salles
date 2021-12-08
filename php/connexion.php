@@ -9,13 +9,18 @@ if (isset($_POST['submit'])) {
     if (!isset($_POST['login']) || !isset($_POST['password'])) {
         $error1 = "Veuillez remplir tout les champs";
     } else {
-        foreach (result() as $key => $value) {
-            if ($_POST['login'] == $value['login'] && password_verify($_POST['password'],$value['password'])) {
+        $log = $_POST['login'];
+        $req = mysqli_query(connectionbdd(), "SELECT * FROM utilisateurs WHERE login='$log'");
+        $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
+        foreach ($res as $key => $value) {
+            if ($_POST['login'] == $value['login'] && password_verify($_POST['password'], $value['password'])) {
+
                 $_SESSION['login'] = $_POST['login'];
                 $_SESSION['password'] = $_POST['password'];
                 $connect = "Vous etes bien connecté";
                 header('Refresh:3 ; URL=planning.php');
-            } elseif($_POST['login']!=$value['login'] || $_POST['password']!= $value['password']){
+                break(1);
+            } elseif ($_POST['login'] != $value['login'] && $_POST['password'] != $value['password']) {
                 $error2 = "verifier votre login/mot de passe";
             }
         }

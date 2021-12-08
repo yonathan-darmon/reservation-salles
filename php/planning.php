@@ -5,24 +5,23 @@ if (isset($_POST['deco'])) {
     session_destroy();
 }
 require "fonction.php";
-
 //semaine précédente//
 if (isset($_GET['moins'])) {
     $moins = $_GET['moins'];
-    $req = mysqli_query(connectionbdd(), "SELECT *FROM reservations INNER JOIN utilisateurs ON id_utilisateur=utilisateurs.id WHERE YEARWEEK(debut)=YEARWEEK(NOW()- INTERVAL $moins WEEK)");
+    $req = mysqli_query(connectionbdd(), "SELECT utilisateurs.login, reservations.titre, reservations.id, reservations.debut FROM reservations INNER JOIN utilisateurs  WHERE utilisateurs.id=reservations.id_utilisateur AND YEARWEEK(debut)=YEARWEEK(NOW()- INTERVAL $moins WEEK) ");
     $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
 } //semaine actuelle//
 elseif (isset($_GET['actuel'])) {
-    $req = mysqli_query(connectionbdd(), "SELECT *FROM reservations INNER JOIN utilisateurs ON id_utilisateur=utilisateurs.id WHERE YEAR( debut ) = YEAR ( CURDATE() ) AND WEEK( debut ) = WEEK ( CURDATE() )");
+    $req = mysqli_query(connectionbdd(), "SELECT utilisateurs.login, reservations.titre, reservations.id, reservations.debut FROM reservations INNER JOIN utilisateurs WHERE utilisateurs.id=reservations.id_utilisateur AND YEAR( debut ) = YEAR ( CURDATE() ) AND WEEK( debut ) = WEEK ( CURDATE() )");
     $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
 } //semaine suivante//
 elseif (isset($_GET['plus'])) {
     $plus = $_GET['plus'];
-    $req = mysqli_query(connectionbdd(), "SELECT *FROM reservations INNER JOIN utilisateurs ON id_utilisateur=utilisateurs.id WHERE YEARWEEK(debut)=YEARWEEK(NOW() + INTERVAL $plus WEEK)");
+    $req = mysqli_query(connectionbdd(), "SELECT utilisateurs.login, reservations.titre, reservations.id, reservations.debut FROM reservations INNER JOIN utilisateurs WHERE utilisateurs.id=reservations.id_utilisateur AND  YEARWEEK(debut)=YEARWEEK(NOW() + INTERVAL $plus WEEK)");
     $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
 } else {
 
-    $req = mysqli_query(connectionbdd(), "SELECT *FROM reservations INNER JOIN utilisateurs ON id_utilisateur=utilisateurs.id WHERE YEAR( debut ) = YEAR ( CURDATE() ) AND WEEK( debut ) = WEEK ( CURDATE() )");
+    $req = mysqli_query(connectionbdd(), "SELECT utilisateurs.login, reservations.titre, reservations.id, reservations.debut FROM reservations INNER JOIN utilisateurs WHERE utilisateurs.id=reservations.id_utilisateur AND YEAR( debut ) = YEAR ( CURDATE() ) AND WEEK( debut ) = WEEK ( CURDATE() )");
     $res = mysqli_fetch_all($req, MYSQLI_ASSOC);
     
 }
