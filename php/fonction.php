@@ -3,7 +3,7 @@
 
 function connectionbdd()
 {
-    $connect = mysqli_connect("localhost:3306", "yoni", "Marseille,13", "yonathan-darmon_reservationsalles"); /*connexion a la base*/
+    $connect = mysqli_connect("localhost", "root", "", "reservationsalles");
     return $connect;
 }
 
