@@ -29,8 +29,8 @@ if (isset($_POST['deco'])) {
             <?php
             if (!isset($_SESSION['login'])) {
                 echo "<li><a href='index.php'>Accueil</a></li>";
-                echo "<li><a href='php/inscription.php'>Inscription</a>";
-                echo "<li><a href='php/connexion.php'>Connexion</a></li>";
+                echo "<li><a href='pages/inscription.php'>Inscription</a>";
+                echo "<li><a href='https://yonathan-darmon.students-laplateforme.io/mesprojets/reservation/pages/connexion.php'>Connexion</a></li>";
             }
             ?>
             <li><a href="php/planning.php">Le planning de la salle</a></li>
